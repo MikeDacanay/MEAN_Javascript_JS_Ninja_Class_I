@@ -9,23 +9,27 @@
  			this.name=name;
  			this.health=100; //default
  			 //default
- 			var privateSpeed=3; //default
- 			var privateStrength=3; //default
+ 			var Speed=3; //default
+ 			var Strength=3; //default
 
  			this.sayName=function(){
  				console.log('My name is '+ this.name);
  			};
  			this.showStats=function(){
- 				console.log('Name: ' +this.name+', Health: '+this.health+', Speed: '+privateSpeed+', Strength: '+privateStrength);
+ 				console.log('Name: ' +this.name+', Health: '+this.health+', Speed: '+Speed+', Strength: '+Strength);
  			};
  			this.drinkSake=function(){
  				this.health+=10;
  			};
  			this.punch=function(ninja){
- 				ninja.health-=10
+ 				if(ninja.constructor===Ninja){
+ 				ninja.health-=10*ninja.Strength
+ 				}
  			};
  			this.kick=function(ninja){
- 				ninja.health-=15
+ 				if(ninja.constructor===Ninja){
+ 					ninja.health-=15*ninja.Strength
+ 				}
  			};
  		};
 
