@@ -14,18 +14,30 @@
 
  			this.sayName=function(){
  				console.log('My name is '+ this.name);
- 			}
+ 			};
  			this.showStats=function(){
  				console.log('Name: ' +this.name+', Health: '+this.health+', Speed: '+privateSpeed+', Strength: '+privateStrength);
- 			}
+ 			};
  			this.drinkSake=function(){
  				this.health+=10;
- 			}
+ 			};
+ 			this.punch=function(ninja){
+ 				ninja.health-=10
+ 			};
+ 			this.kick=function(ninja){
+ 				ninja.health-=15
+ 			};
  		};
 
  		var Mike= new Ninja('Alpha');
+ 		var Ali= new Ninja('Beta');
  		Mike.drinkSake();
  		Mike.showStats();
+
+ 		Mike.punch(Ali);
+ 		Mike.kick(Ali);
+ 		Ali.showStats();
+
  	</script>
  </body>
  </html>
